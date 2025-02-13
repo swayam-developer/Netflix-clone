@@ -1,0 +1,153 @@
+/* Navbar.css */
+.navbar {
+  width: 100%;
+  padding: 20px 4%; /* Slightly reduced padding */
+  display: flex;
+  align-items: center;
+  position: fixed;
+  font-size: 14px;
+  color: #e5e5e5; /* Netflix-like off-white */
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 10%,
+    transparent
+  );
+  z-index: 1;
+  flex-wrap: wrap; /* Important for responsiveness */
+  justify-content: space-between;
+  transition: background-color 0.3s ease; /* Smooth background transition on scroll */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Adjusted gap */
+}
+
+.navbar-left img {
+  width: 100px; /* Larger logo */
+  object-fit: contain; /* Prevents logo distortion */
+}
+
+.navbar-left ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-left ul li {
+  cursor: pointer;
+  font-weight: 500; /* Slightly bolder font */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.navbar-left ul li:hover {
+  color: #fff; /* White on hover */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.navbar-right .profile {
+  border-radius: 4px;
+  width: 35px;
+}
+
+.navbar-right .icons {
+  /* Added more specific class */
+  width: 20px;
+  cursor: pointer;
+}
+
+.navbar-right p {
+  /* Style for "Children" */
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0; /* Remove default paragraph margins */
+  transition: color 0.3s ease;
+}
+.navbar-right p:hover {
+  color: #fff;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar-profile .profile {
+  border-radius: 4px; /* Slightly more rounded */
+  width: 30px;
+  object-fit: cover;
+}
+
+.navbar-profile img:last-child {
+  /* Caret icon */
+  width: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-left {
+    flex: 1;
+    justify-content: center;
+    margin-bottom: 10px; /* Space between left and right on mobile */
+  }
+
+  .navbar-right {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .navbar-left ul {
+    flex-direction: column; /* Stack vertically on mobile */
+    align-items: center;
+  }
+}
+
+.navbar .dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+  background: #191919;
+  padding: 18px 22px;
+  border-radius: 4px;
+  text-decoration: underline;
+  z-index: 1;
+  display: none;
+}
+.navbar .dropdown p {
+  font-size: 13px;
+  cursor: pointer;
+}
+.navbar-profile:hover .dropdown {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    padding: 20px 4%;
+  }
+  .navbar-left ul {
+    display: none;
+  }
+  .navbar img {
+    height: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .navbar img {
+    height: 20px;
+  }
+  .navbar-right {
+    gap: 10px;
+  }
+}
